@@ -32,4 +32,22 @@
     <string name="product_description">Product Description</string>
     <string name="name">Name</string>
     <string name="total_php_0_00">Total: Php 0.00</string>
+    <string name="seller_id">Seller ID</string>
+    <string name="confirm">Confirm</string>
+    <string name="enter_seller_id">ENTER SELLER ID</string>
+    <string-array name="categories">
+        <item name="trinket">Trinkets</item>
+        <item name="textiles">Textiles</item>
+        <item name="furniture">Furniture</item>
+        <item name="raw_materials">Raw Materials</item>
+        <item name="shells">Shells</item>
+        <item name="rattan">Rattan</item>
+        <item name="jewelry">Jewelry</item>
+        <item name="coconut">Coconut</item>
+        <item name="bamboo">Bamboo</item>
+    </string-array>
+    <string-array name="tribes">
+        <item name="bontoc">Bontoc</item>
+        <item name="Ifugao">Ifugao</item>
+    </string-array>
 </resources>

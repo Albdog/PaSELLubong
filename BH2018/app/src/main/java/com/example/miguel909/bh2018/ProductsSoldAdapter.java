@@ -9,11 +9,11 @@ import android.widget.BaseAdapter;
  * Created by Joaquin on 1/27/2018.
  */
 
-public class ProductsSoldSummary extends BaseAdapter {
+public class ProductsSoldAdapter extends BaseAdapter {
 
     private Context mContext;
 
-    public ProductsSoldSummary(Context context) {
+    public ProductsSoldAdapter(Context context) {
         mContext = context;
     }
 

@@ -3,8 +3,7 @@ package com.example.miguel909.bh2018;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
-
-import com.example.miguel909.bh2018.R;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -12,6 +11,7 @@ import butterknife.ButterKnife;
 public class SellerInformationActivity extends AppCompatActivity {
 
     @BindView(R.id.productsSoldList) ListView productsSoldList;
+    @BindView(R.id.sellerName) TextView sellerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class SellerInformationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_seller_information);
         ButterKnife.bind(this);
 
-        ProductsSoldSummary productsSoldSummary = new ProductsSoldSummary(this);
-        productsSoldList.setAdapter(productsSoldSummary);
+        ProductsSoldAdapter productsSoldAdapter = new ProductsSoldAdapter(this);
+        productsSoldList.setAdapter(productsSoldAdapter);
     }
 }
