@@ -3,4 +3,8 @@
     <string name="title_browse">Browse</string>
     <string name="title_cart">Cart</string>
     <string name="title_profile">Profile</string>
+    <string-array name="regions">
+        <item>Region 1</item>
+        <item>Region 2</item>
+    </string-array>
 </resources>
