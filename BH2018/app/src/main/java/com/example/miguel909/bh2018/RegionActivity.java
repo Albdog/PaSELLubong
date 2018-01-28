@@ -24,7 +24,7 @@ public class RegionActivity extends AppCompatActivity {
         regionSpinner.setAdapter(regionAdapter);
 
         RecyclerView tribeListRecyclerView = findViewById(R.id.tribe_list);
-        TribeListAdapter tribeListAdapter = new TribeListAdapter();
+        TribeListAdapter tribeListAdapter = new TribeListAdapter(this);
         tribeListRecyclerView.setAdapter(tribeListAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         tribeListRecyclerView.setLayoutManager(layoutManager);

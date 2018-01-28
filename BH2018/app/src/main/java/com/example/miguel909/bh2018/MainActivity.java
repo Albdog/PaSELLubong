@@ -32,22 +32,22 @@ public class MainActivity extends AppCompatActivity {
                         mPageSelected = 0;
                     }
                 case R.id.navigation_cart:
-                    if(mPageSelected != 1){
+                    if(mPageSelected != 0){
                         selectedFragment = new BrowseFragment();
                         FragmentManager fragmentManager = getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.add(R.id.fragmentContainer ,selectedFragment);
                         fragmentTransaction.commit();
-                        mPageSelected = 1;
+                        mPageSelected = 0;
                     }
                 case R.id.navigation_profile:
-                    if(mPageSelected != 2){
+                    if(mPageSelected != 0){
                         selectedFragment = new BrowseFragment();
                         FragmentManager fragmentManager = getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.add(R.id.fragmentContainer ,selectedFragment);
                         fragmentTransaction.commit();
-                        mPageSelected = 2;
+                        mPageSelected = 0;
                     }
             }
             return false;

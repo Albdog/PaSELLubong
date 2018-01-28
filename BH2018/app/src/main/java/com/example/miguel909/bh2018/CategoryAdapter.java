@@ -14,6 +14,12 @@ import android.widget.ListAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+
+import au.com.bytecode.opencsv.CSVReader;
+
 /**
  * Created by miguel909 on 27/01/2018.
  */
@@ -24,13 +30,20 @@ class CategoryAdapter extends BaseAdapter {
 
     public CategoryAdapter(Context c) {
         mContext = c;
-        mCategoryItem = new CategoryItem();
+        mCategoryItem = new CategoryItem(mContext);
     }
 
     @Override
     public int getCount() {
-        CategoryItem categoryItem = new CategoryItem();
-        return categoryItem.getTitle().length;
+
+        try {
+            CSVReader csvReader = new CSVReader(new FileReader("categories.csv"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        CategoryItem categoryItem = new CategoryItem(mContext);
+        return categoryItem.getTitle().size();
     }
 
     @Override
@@ -51,17 +64,15 @@ class CategoryAdapter extends BaseAdapter {
 
         view = new CategoryView();
         view.categoryIcon = convertView.findViewById(R.id.category_icon);
-        view.categoryTitle = convertView.findViewById(R.id.category_title);
         view.categoryItem = convertView.findViewById(R.id.category_area)
         ;
 
-        view.categoryIcon.setImageResource(mCategoryItem.getResourceIds()[position]);
-        view.categoryTitle.setText(mCategoryItem.getTitle()[position]);
+        view.categoryIcon.setImageResource(mCategoryItem.getResourceIds().get(position));
         view.categoryItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent categorySelected = new Intent(v.getContext(), RegionActivity.class);
-                categorySelected.putExtra("selectedCategory", CategoryItem.getTitle()[position]);
+                categorySelected.putExtra("selectedCategory", mCategoryItem.getTitle().get(position));
                 v.getContext().startActivity(categorySelected);
             }
         });

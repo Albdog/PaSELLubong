@@ -11,16 +11,28 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".RegionActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".SplashScreenActivity"
+            android:theme="@style/NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegionActivity"
-            android:label="PaSELLubong">
-        </activity>
+        <activity android:name=".DisplayProductsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SelectProductActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

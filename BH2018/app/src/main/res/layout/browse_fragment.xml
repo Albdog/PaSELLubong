@@ -17,16 +17,9 @@
             android:layout_weight="4">
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_launcher_background"/>
-            <TextView
-                android:id="@+id/browse_header_text"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Categories"
-                android:textSize="24dp"
-                android:gravity="bottom"
-                android:padding="8dp"/>
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/categories_photo"/>
 
         </RelativeLayout>
 

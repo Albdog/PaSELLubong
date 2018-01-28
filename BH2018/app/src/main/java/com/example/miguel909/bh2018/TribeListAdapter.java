@@ -1,5 +1,7 @@
 package com.example.miguel909.bh2018;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,14 @@ import android.widget.TextView;
  */
 
 class TribeListAdapter extends RecyclerView.Adapter {
+
+    private Context mContext;
+    private TribeItem tribeItem;
+
+    public TribeListAdapter(Context c){
+        mContext = c;
+        tribeItem = new TribeItem(mContext);
+    }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -26,19 +36,18 @@ class TribeListAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        TribeItem tmp = new TribeItem();
-        return tmp.getNames().length;
+        return tribeItem.getResourceIds().size();
     }
 
     private class ListViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView mImageView;
-        private TextView mTextView;
+        private View view;
 
         public ListViewHolder(View itemView) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.tribe_picture);
-            mTextView = itemView.findViewById(R.id.tribe_name);
+            view = itemView.findViewById(R.id.tribe_item);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -46,10 +55,17 @@ class TribeListAdapter extends RecyclerView.Adapter {
             });
         }
 
-        public void bindView(int position){
-            TribeItem tmp = new TribeItem();
-            mImageView.setImageResource(tmp.getResourceIds()[position]);
-            mTextView.setText(tmp.getNames()[position]);
+        public void bindView(final int position){
+
+            mImageView.setImageResource(tribeItem.getResourceIds().get(position));
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent selectTribe = new Intent(v.getContext(), DisplayProductsActivity.class);
+                    selectTribe.putExtra("selectedTribe", tribeItem.getTribeKey().get(position));
+                    v.getContext().startActivity(selectTribe);
+                }
+            });
 
         }
     }
