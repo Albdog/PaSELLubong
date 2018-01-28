@@ -48,6 +48,9 @@
     </string-array>
     <string-array name="tribes">
         <item name="bontoc">Bontoc</item>
-        <item name="Ifugao">Ifugao</item>
+        <item name="ifugao">Ifugao</item>
+    </string-array>
+    <string-array name="regions">
+        <item name="car">CAR</item>
     </string-array>
 </resources>
