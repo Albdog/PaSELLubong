@@ -69,7 +69,8 @@ public class LoginActivity extends AppCompatActivity {
                 break;
             }
             else if(u.equals(users[i]) && p.equals(pass[i]) && (type[i].equals("c"))) {
-                Toast.makeText(this, "You are not an admin.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
                 break;
             }
             else if(!(u.equals(users[i])) || !(p.equals(pass[i]))) {
