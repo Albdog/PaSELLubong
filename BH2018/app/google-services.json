@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "695459073455",
+    "firebase_url": "https://pasellubong.firebaseio.com",
+    "project_id": "pasellubong",
+    "storage_bucket": "pasellubong.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695459073455:android:10383f544b63264c",
+        "android_client_info": {
+          "package_name": "com.example.miguel909.bh2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695459073455-2i7d004scnqjdrfd5cl25pai60kdb9mb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs5SUfQY0jtB1s6IJoS_NTv-PgBLVLkUw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
