@@ -68,17 +68,18 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             }
-            else if(u.equals(users[i]) && p.equals(pass[i]) && (type[i].equals("c"))) {
+            else{
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
             }
-            else if(!(u.equals(users[i])) || !(p.equals(pass[i]))) {
-                Toast.makeText(this, "Incorrect username/password.", Toast.LENGTH_SHORT).show();
-                usernameText.setText("");
-                passwordText.setText("");
-                break;
-            }
+            // if(u.equals(users[i]) && p.equals(pass[i]) && (type[i].equals("c")))
+//            else if(!(u.equals(users[i])) || !(p.equals(pass[i]))) {
+//                Toast.makeText(this, "Incorrect username/password.", Toast.LENGTH_SHORT).show();
+//                usernameText.setText("");
+//                passwordText.setText("");
+//                break;
+//            }
         }
     }
 
