@@ -19,7 +19,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(2000);
-                    Intent jumpToHome = new Intent(SplashScreenActivity.this, MainActivity.class);
+                    Intent jumpToHome = new Intent(SplashScreenActivity.this, LoginActivity.class);
                     startActivity(jumpToHome);
                     finish();
                 } catch (InterruptedException e) {
