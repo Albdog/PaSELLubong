@@ -23,6 +23,10 @@ public class SelectProductActivity extends AppCompatActivity {
     private RecyclerView productDetailsRecyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private TextView quantityDisplay;
+    private static int imageId;
+    private static String name;
+    private static String price;
+    private static String description;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,24 +39,23 @@ public class SelectProductActivity extends AppCompatActivity {
         TextView textView3 = findViewById(R.id.selected_product_description);
 
         String itemKey = getIntent().getExtras().getString("itemKey");
-        ProductItem productItem = new ProductItem(this);
-        String[] data = new String[productItem.getItemKey().size()];
+        final ProductItem productItem = new ProductItem(this);
 
-        int id = 0;
-        String name = "";
-        String price = "";
-        String description = "";
+        imageId = 0;
+        name = "";
+        price = "";
+        description = "";
 
         for(int i = 0; i < productItem.getItemKey().size(); i++){
             if(productItem.getItemKey().get(i).equals(itemKey)){
-                id = productItem.getResourceIds().get(i);
+                imageId = productItem.getResourceIds().get(i);
                 name = productItem.getProductName().get(i);
                 price = productItem.getProductPrice().get(i);
                description = productItem.getProductDescription().get(i);
             }
         }
 
-        productImage.setImageResource(id);
+        productImage.setImageResource(imageId);
         textView1.setText(name);
         textView2.setText(price);
         textView3.setText(description);
@@ -86,7 +89,8 @@ public class SelectProductActivity extends AppCompatActivity {
         addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Order order = new Order(getApplication());
+                order.addToCart(name, imageId, Integer.parseInt(quantityDisplay.getText().toString()), price);
             }
         });
 
