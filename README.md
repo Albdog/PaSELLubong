@@ -1,6 +1,10 @@
 # BlueHacks 2018 (Team ???)
 
 This is the repository for the BlueHacks submission for "Team ???." 
+Team ???
+Joaquin Jacinto
+Miguel Habana
+Arvin Parungao
 
 # About PaSELLubong
 
